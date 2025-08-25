@@ -3,9 +3,9 @@ import { createTheme } from "@mui/material";
 
 
 const PRIMARY_BLUE = "#1E90FF";
-const SECONDARY_BLUE = "#1976d2";
-const DARK_BG = "#0A0F1C";
-const DARK_CARD = "#172136ff";
+const SECONDARY_BLUE = "#7adcff";
+const DARK_BG = "#030712";
+const DARK_CARD = "#070f24";
 const LIGHT_BG = "#ffffff";
 const LIGHT_CARD = "#f8f9fa";
 const TEXT_DARK = "#0A0F1C";
