@@ -5,11 +5,12 @@ import { PiSuitcase } from "react-icons/pi";
 import { LuGraduationCap } from "react-icons/lu";
 import { TbFaceIdError } from "react-icons/tb";
 
-const TypeButton = ({ icon, titleText, subtitle }) => {
+const TypeButton = ({ icon, titleText, subtitle, onClick }) => {
   const theme = useTheme();
 
   return (
     <Box
+      onClick={onClick}
       sx={{
         border: `2px solid ${theme.palette.divider}`,
         width: "88%",
