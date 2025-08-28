@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Box, Typography, useTheme } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
 import TypeButton from "./type-button/TypeButton";
+import UserForm from "./forms/UserForm";
+import Step from "./step/Step";
 
 const SignUp = () => {
   const [selectedType, setSelectedType] = useState(null);
@@ -89,25 +91,25 @@ const SignUp = () => {
                 }}
               >
                 <TypeButton
-                  onClick={() => setSelectedType("user")}
+                  onClick={() => setSelectedType("Simple User")}
                   icon={"user"}
                   titleText={"Simple User"}
                   subtitle={"Explore projects, connect with people."}
                 />
                 <TypeButton
-                  onClick={() => setSelectedType("cofounder")}
+                  onClick={() => setSelectedType("Co-Founder")}
                   icon={"cofounder"}
                   titleText={"Co-Founder"}
                   subtitle={"Looking to start or join a venture."}
                 />
                 <TypeButton
-                  onClick={() => setSelectedType("investor")}
+                  onClick={() => setSelectedType("Investor")}
                   icon={"investor"}
                   titleText={"Investor"}
                   subtitle={"Find investment opportunities."}
                 />
                 <TypeButton
-                  onClick={() => setSelectedType("mentor")}
+                  onClick={() => setSelectedType("Mentor")}
                   icon={"mentor"}
                   titleText={"Mentor"}
                   subtitle={"Share your expertise, guide founders."}
@@ -150,10 +152,42 @@ const SignUp = () => {
                 position: "absolute",
                 width: "100%",
                 height: "100%",
+                // border:"1px solid red",
+                display:"flex",
+                flexDirection:"column",
+                alignItems:"center",
+
               }}
             >
               {/* Aquí va tu formulario */}
-              <Typography variant="h6">Formulario de {selectedType}</Typography>
+              <Typography
+                variant="h5"
+                align="center"
+                sx={{
+                  mt: 4,
+                  fontSize: "1.7rem",
+                  fontWeight: 500,
+                  letterSpacing: "-1.5px",
+                }}
+              >
+                Create Your {selectedType} Profile
+              </Typography>
+              <Typography
+                variant="body1"
+                align="center"
+                sx={{
+                  width: "100%",
+                  color: theme.palette.text.secondary,
+                  fontSize: "0.85rem",
+                  mt: 1,
+                }}
+              >
+                Step 1 of N
+              </Typography>
+
+
+              <Step selectedType={selectedType} />
+
               <Box
                 onClick={() => setSelectedType(null)}
                 sx={{
@@ -164,6 +198,7 @@ const SignUp = () => {
               >
                 volver
               </Box>
+              <UserForm />
             </MotionBox>
           )}
         </AnimatePresence>
